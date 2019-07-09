@@ -8,3 +8,7 @@ console.warn('Test Hot module, yeah baby');
 if (module.hot) {
   console.log('Accepting the updated printMe module!');
 }
+
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!');
+}

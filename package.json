@@ -4,12 +4,13 @@
   "description": "Webpack Sample from Ihatetomatoes",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "prod": "webpack -p",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "prod": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js",
     "watch": "webpack --watch",
-    "build": "webpack",
     "webpack": "webpack",
-    "start": "http-server --open"
+    "start": "webpack --open",
+    "clean": "rimraf .dist/*"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1",
     "xml-loader": "^1.2.1"
   }
 }

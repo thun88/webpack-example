@@ -21,6 +21,14 @@ module.exports = {
       ]
     },
     {
+      test: /\.styl$/,
+      use: [
+        'style',
+        'css-loader',
+        'stylus-loader'
+      ]
+    },
+    {
       test: /\.(png|svg|jpg|gif)$/,
       use: [
         'file-loader'

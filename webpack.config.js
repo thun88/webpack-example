@@ -29,6 +29,23 @@ module.exports = {
       ]
     },
     {
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+          plugins: ['@babel/plugin-proposal-object-rest-spread']
+        }
+      }
+    },
+    {
+      test: /\.pug$/,
+      use: [
+        'pug-loader'
+      ]
+    },
+    {
       test: /\.(png|svg|jpg|gif)$/,
       use: [
         'file-loader'
@@ -65,7 +82,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'My WebApp Example',
       filename: 'index.html',
-      template: './src/index.html',
+      template: './src/index.pug',
       minify: {
         collapseWhitespace: true
       },

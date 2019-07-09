@@ -75,7 +75,8 @@ module.exports = {
     compress: true,
     port: 9000,
     stats: 'errors-only',
-    open: true
+    open: true,
+    hot: true
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -94,7 +95,8 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   stats: {
       colors: true

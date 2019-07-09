@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 const webpack = require('webpack');
 
 module.exports = {
@@ -119,6 +120,10 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
+    new LiveReloadPlugin({
+      appendScriptTag: true
+    }),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
   stats: {

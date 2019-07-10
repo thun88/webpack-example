@@ -9,9 +9,10 @@ import 'bootstrap/js/dist/dropdown';
 console.info('Hello from app.js, this is a sample code');
 console.info('Hello also from webpack server');
 
-console.warn('Test Hot module, yeah baby');
+
 
 if (module.hot) {
+  console.warn('Test Hot module, yeah baby');
   console.log('Accepting the updated printMe module!');
 }
 

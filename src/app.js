@@ -1,4 +1,5 @@
-import style from './assets/styles/app.scss';
+//import style from './assets/styles/app.scss';
+var css = require('./assets/styles/app.styl');
 var $ = require("jquery");
 import 'bootstrap';
 import 'bootstrap/js/dist/util';

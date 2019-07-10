@@ -1,2 +1,53 @@
 # webpack-example
  Just another Webpack Example for 2019, inspired by Ihatetomatoes Youtube Channel
+
+Webpack 4 Sample (Node.js project). with Bootstrap 4, JQuery, Pug, Stylus, Minify Css and HTML
+And more and more and more.
+
+"devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.2",
+    "autoprefixer": "^9.6.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "bootstrap": "^4.3.1",
+    "bootstrap-loader": "^3.0.4",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "csv-loader": "^3.0.2",
+    "exports-loader": "^0.7.0",
+    "favicons-webpack-plugin": "0.0.9",
+    "file-loader": "^4.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "https-server": "^0.1.2",
+    "image-webpack-loader": "^5.0.0",
+    "imports-loader": "^0.8.0",
+    "jquery": "^3.4.1",
+    "mini-css-extract-plugin": "^0.7.0",
+    "node-sass": "^4.12.0",
+    "papaparse": "^5.0.0",
+    "popper.js": "^1.15.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "precss": "^4.0.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
+    "resolve-url-loader": "^3.1.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "sugarss": "^2.0.0",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-livereload-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.1",
+    "xml-loader": "^1.2.1"
+  }

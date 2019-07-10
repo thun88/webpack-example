@@ -4,13 +4,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const webpack = require('webpack');
-
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   entry: [ 'bootstrap-loader',  './src/app.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [{
@@ -96,7 +97,7 @@ module.exports = {
       test: /\.ico$|\.otf$|\.woff(2)?$|\.ttf$|\.wav$|\.mp3$|\.eot$/, // <-- retain original file name
       use: [
         'file-loader'
-      ] 
+      ]
     },
     {
       test: /\.(csv|tsv)$/,
@@ -124,8 +125,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'My WebApp Example',
       filename: 'index.html',
-      template: './src/index.pug',
-      favicon: 'src/images/favicon.ico',
+      template: './src/views/index.pug',
+      favicon: 'src/assets/images/favicons/favicon.ico',
       minify: {
         collapseWhitespace: true
       },
@@ -151,7 +152,45 @@ module.exports = {
       Tether: "tether",
       "window.Tether": "tether",
       Popper: ['popper.js', 'default'],
-
+      Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
+      Button: "exports-loader?Button!bootstrap/js/dist/button",
+      Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
+      Collapse: "exports-loader?Collapse!bootstrap/js/dist/collapse",
+      Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
+      Modal: "exports-loader?Modal!bootstrap/js/dist/modal",
+      Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
+      Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
+      Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
+      Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
+      Util: "exports-loader?Util!bootstrap/js/dist/util",
+    }),
+    new FaviconsWebpackPlugin({
+      // Your source logo
+      logo: './src/assets/images/favicons/pug-icon.png',
+      // The prefix for all image files (might be a folder or a name)
+      prefix: 'icons/',
+      // Emit all stats of the generated icons
+      emitStats: false,
+      // Generate a cache file with control hashes and
+      // don't rebuild the favicons until those hashes change
+      persistentCache: true,
+      // Inject the html into the html-webpack-plugin
+      inject: true,
+      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+      background: '#ed143d',
+      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     })
   ],
   resolve: {

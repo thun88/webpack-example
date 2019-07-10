@@ -1,5 +1,4 @@
-import style from './app.scss';
-import './images/favicon.ico';
+import style from './assets/styles/app.scss';
 var $ = require("jquery");
 import 'bootstrap';
 import 'bootstrap/js/dist/util';

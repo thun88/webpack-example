@@ -3,22 +3,79 @@ html(lang="en")
   head
     title= pageTitle
   body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
-        Hot hot hot, but not so hot
-      h2 we should try another template
-      h3 Hey another title, cool!
-      h4 Fast fast, and then slow slow slow
-      img(src=require("./images/javascript-logo.png"))
-      span
-      img(src=require("./images/HTML5-logo.svg"))
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+      a.navbar-brand(href='#') Navbar
+      button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarsExampleDefault' aria-controls='navbarsExampleDefault' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='#')
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a.nav-link(href='#') Link
+          li.nav-item
+            a.nav-link.disabled(href='#') Disabled
+          li.nav-item.dropdown
+            a#dropdown01.nav-link.dropdown-toggle(href='http://example.com' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') Dropdown
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type='text' placeholder='Search' aria-label='Search')
+          button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+  
+    main(role='main')
+      // Main jumbotron for a primary marketing message or call to action
+      .jumbotron
+        .container
+          h1 Pug - node template engine, with Bootstrap 4 Style
+          h1.display-3 Hello, world!
+          if youAreUsingPug
+            p You are amazing, you are using PUG
+          else
+            p Get on it! Go to install PUG, get modular HTML!
+          p.
 
-      span
+          p
+            | This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.
+          p
+            a.btn.btn-primary.btn-lg(href='#' role='button') Learn more &raquo;
+      .container
+        // Example row of columns
+        .row
+          .col-md-4
+            h2 Heading
+            p
+              | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            p
+              a.btn.btn-secondary(href='#' role='button') View details &raquo;
+          .col-md-4
+            h2 Heading
+            p
+              | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+            p
+              a.btn.btn-secondary(href='#' role='button') View details &raquo;
+          .col-md-4
+            h2 Heading
+            p
+              | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            p
+              a.btn.btn-secondary(href='#' role='button') View details &raquo;
+          hr
+
+          p.
+            Pug is a terse and simple templating language with a
+            strong focus on performance and powerful features.
+            Hot hot hot, but not so hot
+          h2 we should try another template
+          h3 Hey another title, cool!
+          h4 Fast fast, and then slow slow slow
+          img(src=require("./images/javascript-logo.png"))
+          span
+          img(src=require("./images/HTML5-logo.svg"))
+
+          span
 

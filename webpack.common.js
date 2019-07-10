@@ -5,20 +5,37 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 const webpack = require('webpack');
 
+
 module.exports = {
-  entry: './src/app.js',
+  entry: [ 'bootstrap-loader',  './src/app.js' ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
   module: {
     rules: [{
-      test: /\.scss$/,
+      test: /\.(scss)$/,
       use: [
         process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader, // creates style nodes from JS strings
         "css-loader", // translates CSS into CommonJS
+        {
+          loader: 'postcss-loader', // Run post css actions
+          options: {
+            path: path.resolve(__dirname, '/postcss.config.js'),
+            plugins: function () { // post css plugins, can be exported to postcss.config.js
+              return [
+                require('precss'),
+                require('autoprefixer')
+              ];
+            }
+          }
+        },
         "sass-loader" // compiles Sass to CSS, using Node Sass by default
       ]
+    },
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'postcss-loader', 'css-loader']
     },
     {
       test: /\.styl$/,
@@ -112,8 +129,8 @@ module.exports = {
       minify: {
         collapseWhitespace: true
       },
-      hash: true
-
+      hash: true,
+      inject: true
     }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
@@ -125,8 +142,23 @@ module.exports = {
       appendScriptTag: true
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
+      Tether: "tether",
+      "window.Tether": "tether",
+      Popper: ['popper.js', 'default'],
+
+    })
   ],
+  resolve: {
+    alias: {
+        jquery: "jquery/src/jquery"
+    }
+  },
   stats: {
       colors: true
   },

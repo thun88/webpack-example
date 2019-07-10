@@ -1,9 +1,9 @@
 import style from './app.scss';
 import './images/favicon.ico';
-
-
-
-//import 'raw-loader!./index.pug'
+var $ = require("jquery");
+import 'bootstrap';
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/dropdown';
 
 
 console.info('Hello from app.js, this is a sample code');

@@ -76,10 +76,10 @@ module.exports = {
       ],
     },
     {
-      test: /\.(woff|woff2|eot|ttf|otf)$/,
+      test: /\.ico$|\.otf$|\.woff(2)?$|\.ttf$|\.wav$|\.mp3$|\.eot$/, // <-- retain original file name
       use: [
         'file-loader'
-      ]
+      ] 
     },
     {
       test: /\.(csv|tsv)$/,
@@ -108,6 +108,7 @@ module.exports = {
       title: 'My WebApp Example',
       filename: 'index.html',
       template: './src/index.pug',
+      favicon: 'src/images/favicon.ico',
       minify: {
         collapseWhitespace: true
       },

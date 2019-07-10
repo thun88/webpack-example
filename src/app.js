@@ -1,4 +1,7 @@
 import style from './app.scss';
+import './images/favicon.ico';
+
+
 
 //import 'raw-loader!./index.pug'
 
